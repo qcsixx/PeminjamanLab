@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -21,25 +20,21 @@ class LoginController extends Controller
     {
         // Validasi input
         $request->validate([
-            'username_email' => 'required|string',
+            'login' => 'required|string', // Bisa Email atau NIM
             'password' => 'required|string',
         ]);
 
-        // Cek apakah input username_email adalah email atau username
-        $credentials = filter_var($request->username_email, FILTER_VALIDATE_EMAIL)
-            ? ['email' => $request->username_email]
-            : ['username' => $request->username_email];  // Jika menggunakan username
+        // Tentukan apakah login menggunakan email atau NIM
+        $fieldType = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'nim';
 
-        $credentials['password'] = $request->password;
-
-        // Coba login
-        if (Auth::attempt($credentials, $request->remember)) {
-            return redirect()->intended('/dashboard');
+        // Coba login dengan kredensial yang sesuai
+        if (Auth::attempt([$fieldType => $request->login, 'password' => $request->password], $request->remember)) {
+            return redirect()->intended(route('dashboard')); // Arahkan ke dashboard
         }
 
         // Jika login gagal
         throw ValidationException::withMessages([
-            'username_email' => ['The provided credentials do not match our records.'],
+            'login' => ['Email atau NIM dan password tidak cocok dengan data kami.'],
         ]);
     }
 
@@ -47,5 +42,12 @@ class LoginController extends Controller
     public function showLinkRequestForm()
     {
         return view('auth.passwords.email');
+    }
+
+    // Logout pengguna
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('login')->with('success', 'Anda telah logout.');
     }
 }

@@ -45,11 +45,7 @@
         <div class="mt-8 flex flex-wrap justify-center gap-6 animate__animated animate__fadeInUp animate__delay-3s">
             <a href="{{ url('/login') }}" 
                 class="px-8 py-3 bg-[#0F4C81] text-white font-semibold rounded-lg shadow-lg transition-all duration-500 transform hover:bg-[var(--button-hover)] hover:scale-110">
-                Login
-            </a>
-            <a href="{{ url('/register') }}" 
-                class="px-8 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-500 transform hover:bg-[var(--button-hover)] hover:scale-110">
-                Register
+                Sign In
             </a>
         </div>
     </section>

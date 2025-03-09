@@ -22,12 +22,12 @@
         <form method="POST" action="{{ route('login') }}" class="mt-6">
             @csrf
 
-            <!-- Email Field -->
+            <!-- Email atau NIM Field -->
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
+                <label for="email_or_nim" class="block text-sm font-medium text-gray-700">Email atau NIM</label>
+                <input id="email_or_nim" type="text" name="email_or_nim" value="{{ old('email_or_nim') }}" required autofocus
                     class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
-                @error('email')
+                @error('email_or_nim')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
@@ -49,16 +49,17 @@
                     Login
                 </button>
             </div>
-
-            <!-- Forgot Password Link -->
-            <div class="mt-4 text-center">
-                @if(Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-sm text-blue-900 transition duration-300 hover:text-yellow-400 hover:underline">
-                        Lupa Password?
-                    </a>
-                @endif
-            </div>
         </form>
+
+        <!-- Register & Forgot Password Links -->
+        <div class="mt-4 flex justify-between text-sm text-gray-900">
+            <span>Belum punya akun? <a href="{{ route('register') }}" class="text-blue-900 hover:text-yellow-400 transition duration-300">Register</a></span>
+            @if(Route::has('password.request'))
+                <a href="{{ route('password.request') }}" class="text-blue-900 transition duration-300 hover:text-yellow-400">
+                    Lupa Password?
+                </a>
+            @endif
+        </div>
     </div>
 
     <script>

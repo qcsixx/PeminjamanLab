@@ -35,39 +35,39 @@
         <main class="flex-1 pt-10 px-6">
             <div class="bg-[var(--card-bg)] shadow-lg p-6 rounded-xl">
                 <h2 class="text-xl font-bold text-[var(--primary)] mb-4">Daftar Peminjaman</h2>
-                <table class="w-full border border-gray-300 shadow-sm rounded-lg overflow-hidden">
+                <table class="w-full border-2 border-gray-300 shadow-sm rounded-lg overflow-hidden">
                     <thead>
                         <tr class="bg-[var(--primary)] text-white text-left">
-                            <th class="p-3 border border-gray-300">Nama</th>
-                            <th class="p-3 border border-gray-300">Barang</th>
-                            <th class="p-3 border border-gray-300">Jumlah</th>
-                            <th class="p-3 border border-gray-300">Status</th>
-                            <th class="p-3 border border-gray-300">Aksi</th>
+                            <th class="p-3 border-2 border-gray-300">Nama</th>
+                            <th class="p-3 border-2 border-gray-300">Barang</th>
+                            <th class="p-3 border-2 border-gray-300">Jumlah</th>
+                            <th class="p-3 border-2 border-gray-300">Status</th>
+                            <th class="p-3 border-2 border-gray-300">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b hover:bg-gray-100 transition">
-                            <td class="p-3 border border-gray-300">John Doe</td>
-                            <td class="p-3 border border-gray-300">Arduino Uno</td>
-                            <td class="p-3 border border-gray-300">1</td>
-                            <td class="p-3 text-yellow-500 font-semibold">Pending</td>
-                            <td class="p-3 text-center">-</td>
+                        <tr class="bg-white border-b-2 hover:bg-gray-100 transition">
+                            <td class="p-3 border-2 border-gray-300">John Doe</td>
+                            <td class="p-3 border-2 border-gray-300">Arduino Uno</td>
+                            <td class="p-3 border-2 border-gray-300">1</td>
+                            <td class="p-3 text-yellow-500 font-semibold border-2 border-gray-300">Pending</td>
+                            <td class="p-3 text-center border-2 border-gray-300">-</td>
                         </tr>
-                        <tr class="bg-gray-50 border-b hover:bg-gray-100 transition">
-                            <td class="p-3 border border-gray-300">Jane Smith</td>
-                            <td class="p-3 border border-gray-300">Sensor DHT11</td>
-                            <td class="p-3 border border-gray-300">2</td>
-                            <td class="p-3 text-green-500 font-semibold">Approved</td>
-                            <td class="p-3 text-center">
+                        <tr class="bg-gray-50 border-b-2 hover:bg-gray-100 transition">
+                            <td class="p-3 border-2 border-gray-300">Jane Smith</td>
+                            <td class="p-3 border-2 border-gray-300">Sensor DHT11</td>
+                            <td class="p-3 border-2 border-gray-300">2</td>
+                            <td class="p-3 text-green-500 font-semibold border-2 border-gray-300">Approved</td>
+                            <td class="p-3 text-center border-2 border-gray-300">
                                 <button class="bg-[var(--primary)] text-white px-4 py-2 rounded-md hover:bg-[var(--button-hover)] transition" onclick="openUploadModal()">Konfirmasi Pengembalian</button>
                             </td>
                         </tr>
-                        <tr class="bg-white border-b hover:bg-gray-100 transition">
-                            <td class="p-3 border border-gray-300">Alex Johnson</td>
-                            <td class="p-3 border border-gray-300">Multimeter</td>
-                            <td class="p-3 border border-gray-300">1</td>
-                            <td class="p-3 text-red-500 font-semibold">Rejected</td>
-                            <td class="p-3 text-center">Dokumen tidak lengkap</td>
+                        <tr class="bg-white border-b-2 hover:bg-gray-100 transition">
+                            <td class="p-3 border-2 border-gray-300">Alex Johnson</td>
+                            <td class="p-3 border-2 border-gray-300">Multimeter</td>
+                            <td class="p-3 border-2 border-gray-300">1</td>
+                            <td class="p-3 text-red-500 font-semibold border-2 border-gray-300">Rejected</td>
+                            <td class="p-3 text-center border-2 border-gray-300">Dokumen tidak lengkap</td>
                         </tr>
                     </tbody>
                 </table>                
